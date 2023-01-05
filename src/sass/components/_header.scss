@@ -1,0 +1,150 @@
+.header {
+    background-color: rgba(0, 0, 0, 0.56);
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 40px;
+    padding-bottom: 62px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    @include tablet() {
+        padding-bottom: 60px;
+    }
+}
+
+.header--main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    padding-bottom: 92px;
+
+    @include mobile-only() {
+        background-image: linear-gradient(
+                to right,
+                rgba(0, 0, 0, 0.56),
+                rgba(0, 0, 0, 0.56)
+            ),
+            url(../images/main/header-main-mobile-bg.jpg);
+
+        @include retina {
+            background-image: linear-gradient(
+                    to right,
+                    rgba(0, 0, 0, 0.56),
+                    rgba(0, 0, 0, 0.56)
+                ),
+                url(../images/main/header-main-mobile-bg\ @2.jpg);
+        }
+    }
+
+    @include tablet() {
+        padding-bottom: 80px;
+    }
+
+    @include tablet-only() {
+        background-image: linear-gradient(
+                to right,
+                rgba(0, 0, 0, 0.56),
+                rgba(0, 0, 0, 0.56)
+            ),
+            url(../images/main/header-main-tablet-bg.jpg);
+
+        @include retina {
+            background-image: linear-gradient(
+                    to right,
+                    rgba(0, 0, 0, 0.56),
+                    rgba(0, 0, 0, 0.56)
+                ),
+                url(../images/main/header-main-tablet-bg\ @2.jpg);
+        }
+    }
+
+    @include desktop() {
+        background-image: linear-gradient(
+                to right,
+                rgba(0, 0, 0, 0.56),
+                rgba(0, 0, 0, 0.56)
+            ),
+            url(../images/main/header-main-desktop-bg.jpg);
+
+        @include retina {
+            background-image: linear-gradient(
+                    to right,
+                    rgba(0, 0, 0, 0.56),
+                    rgba(0, 0, 0, 0.56)
+                ),
+                url(../images/main/header-main-desktop-bg\ @2.jpg);
+        }
+    }
+}
+
+.search-form {
+    position: relative;
+    margin: 54px auto 0;
+
+    background-color: inherit;
+
+    @include tablet() {
+        margin-top: 40px;
+    }
+}
+
+input {
+    padding: 0;
+    min-width: 280px;
+    height: 20px;
+
+    border: none;
+    outline: none;
+    border-bottom: 1px solid #fff;
+    background-color: inherit;
+    transition: border-bottom-color var(--transition-prop);
+
+    @include font(400, 14px, 1.17);
+    color: rgba(255, 255, 255, 1);
+
+    @include tablet-only() {
+        min-width: 336px;
+    }
+    @include desktop() {
+        min-width: 394px;
+    }
+
+    &:hover {
+        border-bottom-color: var(--accent-color);
+    }
+
+    &:hover::placeholder {
+        color: var(--accent-color-light);
+    }
+}
+
+input::placeholder {
+    color: rgba(255, 255, 255, 1);
+    transition: color var(--transition-prop);
+}
+
+.submit-btn {
+    position: absolute;
+    right: -15px;
+    top: -10px;
+    width: 40px;
+    height: 40px;
+
+    border: none;
+    background-color: inherit;
+    cursor: pointer;
+
+    color: var(--text-color-light);
+}
+
+.search-svg {
+    position: absolute;
+    right: 15px;
+    top: 12px;
+
+    width: 12px;
+    height: 12px;
+
+    stroke: currentColor;
+}
